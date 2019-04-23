@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -79,6 +79,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.lyricsENFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MP3TrackBar)).BeginInit();
@@ -124,6 +125,7 @@
             this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MusicOpen,
             this.LyricsOpen,
+            this.lyricsENFileToolStripMenuItem,
             this.jSONFileLoadToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
@@ -133,28 +135,28 @@
             // MusicOpen
             // 
             this.MusicOpen.Name = "MusicOpen";
-            this.MusicOpen.Size = new System.Drawing.Size(155, 22);
+            this.MusicOpen.Size = new System.Drawing.Size(180, 22);
             this.MusicOpen.Text = "Music File";
             this.MusicOpen.Click += new System.EventHandler(this.MusicOpen_Click);
             // 
             // LyricsOpen
             // 
             this.LyricsOpen.Name = "LyricsOpen";
-            this.LyricsOpen.Size = new System.Drawing.Size(155, 22);
-            this.LyricsOpen.Text = "Lyrics File";
+            this.LyricsOpen.Size = new System.Drawing.Size(180, 22);
+            this.LyricsOpen.Text = "Lyrics KO File";
             this.LyricsOpen.Click += new System.EventHandler(this.LyricsOpen_Click);
             // 
             // jSONFileLoadToolStripMenuItem
             // 
             this.jSONFileLoadToolStripMenuItem.Name = "jSONFileLoadToolStripMenuItem";
-            this.jSONFileLoadToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.jSONFileLoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jSONFileLoadToolStripMenuItem.Text = "JSON File Load";
             this.jSONFileLoadToolStripMenuItem.Click += new System.EventHandler(this.JsonLoad_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -215,8 +217,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.OldLace;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.OldLace;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -233,14 +235,14 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(702, 391);
             this.dataGridView1.TabIndex = 20;
@@ -565,6 +567,13 @@
             this.label10.TabIndex = 48;
             this.label10.Text = ":";
             // 
+            // lyricsENFileToolStripMenuItem
+            // 
+            this.lyricsENFileToolStripMenuItem.Name = "lyricsENFileToolStripMenuItem";
+            this.lyricsENFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lyricsENFileToolStripMenuItem.Text = "Lyrics EN File";
+            this.lyricsENFileToolStripMenuItem.Click += new System.EventHandler(this.lyricsENFileToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -671,6 +680,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStripMenuItem lyricsENFileToolStripMenuItem;
     }
 }
 
