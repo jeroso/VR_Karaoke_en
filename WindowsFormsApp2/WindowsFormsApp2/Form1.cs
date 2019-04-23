@@ -176,6 +176,7 @@ namespace WindowsFormsApp2
                                 }
                             }
                         }
+                        c = 0;
                         
                     }
                 }
@@ -198,8 +199,8 @@ namespace WindowsFormsApp2
         {
             Lyrics lyrics1 = new Lyrics();
 
-            try
-            {
+            //try
+            //{
                 using (OpenFileDialog open = new OpenFileDialog())
                 {
                     open.Filter = "(*.txt) |*.txt|모든 파일(*.*)|*.*";
@@ -224,22 +225,23 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
-                                if (c == 0) { 
+                            if (c == 0)
+                            {
                                 dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
-                                dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
-                                dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
-                                dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
-                                dataGridView1.Rows[(2 * i + 1) - c].Cells[5].Value = "Confirm";
-                                }
-                                else
-                                {
-                                    dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
-                                    dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
-                                    dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
-                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
-                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
-                                }
+                                    dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
+                                    dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
+                                    dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
+                                    dataGridView1.Rows[(2 * i + 1) - c].Cells[5].Value = "Confirm";
                             }
+                            else
+                            {
+                                dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
+                                dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
+                                dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
+                                dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
+                                dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
+                            }
+                        }
                         }
 
                     }
@@ -253,8 +255,8 @@ namespace WindowsFormsApp2
 
                 }
                 string payload = lyrics1.collection1.ToString();
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
 
