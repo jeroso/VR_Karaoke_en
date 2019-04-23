@@ -224,11 +224,21 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
-                                dataGridView1["Column4", (2 * i - 1) - c].Value = lines[i - 1];
-                                dataGridView1["Column6", (2 * i - 1) - c].Value = "Verse" + (c + 1);
-                                dataGridView1["Column1", (2 * i - 1) - c].Value = i + 1 - c;
-                                dataGridView1.Rows[(2 * i - 1) - c].Cells[5] = new DataGridViewButtonCell();
-                                dataGridView1.Rows[(2 * i - 1) - c].Cells[5].Value = "Confirm";
+                                if (c == 0) { 
+                                dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
+                                dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
+                                dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
+                                dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
+                                dataGridView1.Rows[(2 * i + 1) - c].Cells[5].Value = "Confirm";
+                                }
+                                else
+                                {
+                                    dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
+                                    dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
+                                    dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
+                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
+                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
+                                }
                             }
                         }
 
