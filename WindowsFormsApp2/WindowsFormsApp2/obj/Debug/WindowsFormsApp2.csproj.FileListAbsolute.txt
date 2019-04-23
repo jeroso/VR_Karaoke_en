@@ -1,0 +1,40 @@
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\song\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\song\Downloads\Telegram Desktop\WindowsFormsApp2\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojResolveAssemblyReference.cache
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\grace\Desktop\VR_karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.Cache
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\song\Desktop\VR_Karaoke\VR_Karaoke_new\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
