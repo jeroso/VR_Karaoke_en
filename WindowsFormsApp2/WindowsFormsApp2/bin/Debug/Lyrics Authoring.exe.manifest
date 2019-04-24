@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lyrics Authoring.exe" size="59864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lyrics Authoring.exe" size="60376">
       <assemblyIdentity name="Lyrics Authoring" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>q+nITYYVpAhn5DQZruCtdibF/D/H7BQX/lhsc7WDOG8=</dsig:DigestValue>
+        <dsig:DigestValue>HfLgLO+gI6SXbrJ5Y0l7NW+XqQJQ2YyA2Ptj9S5sXoA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

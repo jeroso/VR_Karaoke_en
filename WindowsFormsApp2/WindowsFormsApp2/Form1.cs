@@ -127,8 +127,8 @@ namespace WindowsFormsApp2
         {
             Lyrics lyrics1 = new Lyrics();
 
-            try
-            {
+            //try
+            //{
                 using (OpenFileDialog open = new OpenFileDialog())
                 {
                     open.Filter = "(*.txt) |*.txt|모든 파일(*.*)|*.*";
@@ -144,9 +144,9 @@ namespace WindowsFormsApp2
                             c = 0;
                         }
 
-                        for (int i = 0; i < lines.Length; i++)
+                        for (int i = 0; i < lines.Length /2 + 1; i++)
                         {
-                            if (lines[i] == "")
+                            if (lines[i + i] == "")
                             {
                                 verse = i;
                                 c++;
@@ -154,29 +154,46 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
-                                if (c == 0)
-                                {
-                                    dataGridView1.Rows.Add();
-                                    dataGridView1.Rows.Add();
-                                    dataGridView1["Column4", (2 * i) - c].Value = lines[i];
-                                    dataGridView1["Column6", (2 * i) - c].Value = "Verse" + (c + 1);
-                                    dataGridView1["Column1", (2 * i) - c].Value = i + 1 - c;
-                                    dataGridView1.Rows[(2 * i) - c].Cells[5] = new DataGridViewButtonCell();
-                                    dataGridView1.Rows[(2 * i) - c].Cells[5].Value = "Confirm";
-                                }
-                                else
-                                {
-                                    dataGridView1.Rows.Add();
-                                    dataGridView1.Rows.Add();
-                                    dataGridView1["Column4", (2 * i) - (c + 1)].Value = lines[i];
-                                    dataGridView1["Column6", (2 * i) - (c + 1)].Value = "Verse" + (c + 1);
-                                    dataGridView1["Column1", (2 * i) - (c + 1)].Value = i + 1 - c;
-                                    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
-                                    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5].Value = "Confirm";
-                                }
+                                if(c == 0) { 
+                                dataGridView1.Rows.Add();
+                                dataGridView1["Column4", i - c].Value = lines[i + i] + Environment.NewLine + lines[i + i + 1];
+                                dataGridView1["Column6", i - c].Value = "Verse" + (c + 1);
+                                dataGridView1["Column1", i - c].Value = i + 1 - c;
+                                dataGridView1.Rows[i - c].Cells[5] = new DataGridViewButtonCell();
+                                dataGridView1.Rows[i - c].Cells[5].Value = "Confirm";
                             }
+                            else
+                            {
+                                dataGridView1.Rows.Add();
+                                dataGridView1["Column4", i - c].Value = lines[i + i - c] + Environment.NewLine + lines[i + i + 1 - c];
+                                dataGridView1["Column6", i - c].Value = "Verse" + (c + 1);
+                                dataGridView1["Column1", i - c].Value = i + 1 - c;
+                                dataGridView1.Rows[i - c].Cells[5] = new DataGridViewButtonCell();
+                                dataGridView1.Rows[i - c].Cells[5].Value = "Confirm";
+                            }
+                            //if (c == 0)
+                            //{
+                            //    dataGridView1.Rows.Add();
+                            //    dataGridView1.Rows.Add();
+                            //    dataGridView1["Column4", (2 * i) - c].Value = lines[i] + Environment.NewLine + lines[i + 1];
+                            //    dataGridView1["Column6", (2 * i) - c].Value = "Verse" + (c + 1);
+                            //    dataGridView1["Column1", (2 * i) - c].Value = i + 1 - c;
+                            //    dataGridView1.Rows[(2 * i) - c].Cells[5] = new DataGridViewButtonCell();
+                            //    dataGridView1.Rows[(2 * i) - c].Cells[5].Value = "Confirm";
+                            //}
+                            //else
+                            //{
+                            //    dataGridView1.Rows.Add();
+                            //    dataGridView1.Rows.Add();
+                            //    dataGridView1["Column4", (2 * i) - (c + 1)].Value = lines[i];
+                            //    dataGridView1["Column6", (2 * i) - (c + 1)].Value = "Verse" + (c + 1);
+                            //    dataGridView1["Column1", (2 * i) - (c + 1)].Value = i + 1 - c;
+                            //    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
+                            //    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5].Value = "Confirm";
+                            //}
                         }
-                        c = 0;
+                        }
+                        //c = 0;
                         
                     }
                 }
@@ -189,8 +206,8 @@ namespace WindowsFormsApp2
 
                 }
                 string payload = lyrics1.collection1.ToString();
-            }
-            catch { }
+            //}
+            //catch { }
            
         }
 
@@ -227,7 +244,7 @@ namespace WindowsFormsApp2
                             {
                             if (c == 0)
                             {
-                                dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
+                                    dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
                                     dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
                                     dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
                                     dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
@@ -235,11 +252,11 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
-                                dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
-                                dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
-                                dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
-                                dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
-                                dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
+                                    dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
+                                    dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
+                                    dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
+                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
+                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
                             }
                         }
                         }
@@ -761,6 +778,7 @@ namespace WindowsFormsApp2
             this.Close();
         }
 
+        // 음악 label 클릭 시 음악파일 불러오기
         private void label7_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog open = new OpenFileDialog())
@@ -792,7 +810,7 @@ namespace WindowsFormsApp2
         }
 
        
-
+        // 가사 label 클릭 시 파일불러오기
         private void label8_Click(object sender, EventArgs e)
         {
             Lyrics lyrics1 = new Lyrics();
@@ -848,7 +866,7 @@ namespace WindowsFormsApp2
             catch { }
         }
 
-       
+
 
         // dataGridView1   선택
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

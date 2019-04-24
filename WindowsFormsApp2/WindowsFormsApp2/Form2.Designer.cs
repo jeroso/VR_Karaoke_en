@@ -208,7 +208,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 65);
+            this.label5.Location = new System.Drawing.Point(12, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 12);
             this.label5.TabIndex = 41;
@@ -299,7 +299,7 @@
             this.label6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(57, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(308, 22);
+            this.label6.Size = new System.Drawing.Size(308, 39);
             this.label6.TabIndex = 57;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
