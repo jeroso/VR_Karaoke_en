@@ -47,10 +47,11 @@ namespace WindowsFormsApp2
 
                 arr2 = new JsonArrayCollection("lines");
 
-                for (int i = 0; i < verse; i++)
+                for (int i = 0; i < verse / 2; i++)
                 {
                     collection3 = new JsonObjectCollection();
-                    collection3.Add(new JsonStringValue("lineText", lineText[i]));
+                    collection3.Add(new JsonStringValue("lineText", lineText[i + i]));
+                    collection3.Add(new JsonStringValue("lineTextEn", lineText[i + i + 1]));
                     collection3.Add(new JsonNumericValue("lineStart", baseResult[i, 0]));
                     collection3.Add(new JsonNumericValue("lineEnd", baseResult[i, 1]));
                     collection3.Add(new JsonStringValue("gender", ""));
@@ -65,6 +66,7 @@ namespace WindowsFormsApp2
                             collection5.Add(new JsonNumericValue("charStart", double.Parse(result[i, k, 0])));
                             //collection5.Add(new JsonNumericValue("charEnd", double.Parse(result[i, k, 1])));
                             collection5.Add(new JsonStringValue("text", result[i, k, 2]));
+                            collection5.Add(new JsonStringValue("textEn" , result[i, k, 1]));
                             arr3.Add(collection5);
                         }
                     }
@@ -83,10 +85,12 @@ namespace WindowsFormsApp2
 
 
                 arr2 = new JsonArrayCollection("lines");
-                for (int i = verse + 1; i < lines; i++)
+                //for (int i = verse + 1; i < lines / 2; i++)
+                for (int i = verse + 1; i < lines / 2 + 1; i++)
                 {
                     collection4 = new JsonObjectCollection();
-                    collection4.Add(new JsonStringValue("lineText", lineText[i]));
+                    collection4.Add(new JsonStringValue("lineText", lineText[i + i - 1]));
+                    collection4.Add(new JsonStringValue("lineTextEn", lineText[i + i]));
                     collection4.Add(new JsonNumericValue("lineStart", baseResult[i - 1, 0]));
                     collection4.Add(new JsonNumericValue("lineEnd", baseResult[i - 1, 1]));
                     collection4.Add(new JsonStringValue("gender", ""));
@@ -100,6 +104,7 @@ namespace WindowsFormsApp2
                             collection5.Add(new JsonNumericValue("charStart", double.Parse(result[i - 1, k, 0])));
                             //collection5.Add(new JsonNumericValue("charEnd", double.Parse(result[i - 1, k, 1])));
                             collection5.Add(new JsonStringValue("text", result[i - 1, k, 2]));
+                            collection5.Add(new JsonStringValue("textEn", result[i -1, k, 1]));
                             arr3.Add(collection5);
                         }
                     }
@@ -150,6 +155,7 @@ namespace WindowsFormsApp2
                             collection5.Add(new JsonNumericValue("charStart", double.Parse(result[i, k, 0])));
                             //collection5.Add(new JsonNumericValue("charEnd", double.Parse(result[i, k, 1])));
                             collection5.Add(new JsonStringValue("text", result[i, k, 2]));
+                            collection5.Add(new JsonStringValue("textEn", result[i, k, 1]));
                             arr3.Add(collection5);
                         }
                     }

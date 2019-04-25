@@ -471,6 +471,7 @@ namespace WindowsFormsApp2
                     result[line, i, 0] = data[line, i, 0];
                     //result[line, i, 1] = data[line, i, 1];
                     result[line, i, 2] = data[line, i, 2];
+                    result[line, i, 1] = data[line, i, 1];
                 }
                 baseResultSave();
                 //DataGridView2 의 행의 개수 0 : start , 1: End  2: text 3: 행수
