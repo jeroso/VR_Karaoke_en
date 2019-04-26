@@ -86,7 +86,7 @@ namespace WindowsFormsApp2
                             JsonObjectCollection item = (JsonObjectCollection)col3[j];
                             detailtime[i + verse, j, 0] = item["charStart"].GetValue().ToString();
                             //detailtime[i + verse, j, 1] = item["charEnd"].GetValue().ToString();
-                            detailtime[i, j, 1] = ((JsonStringValue)item["textEn"]).Value;
+                            detailtime[i + verse, j, 1] = ((JsonStringValue)item["textEn"]).Value;
                             detailtime[i + verse, j, 2] = ((JsonStringValue)item["text"]).Value;
                         }
                         detailtime[i + verse, 0, 3] = col3.Count.ToString();

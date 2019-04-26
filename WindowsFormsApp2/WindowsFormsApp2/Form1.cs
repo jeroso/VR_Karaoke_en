@@ -127,8 +127,8 @@ namespace WindowsFormsApp2
         {
             Lyrics lyrics1 = new Lyrics();
 
-            //try
-            //{
+            try
+            {
                 using (OpenFileDialog open = new OpenFileDialog())
                 {
                     open.Filter = "(*.txt) |*.txt|모든 파일(*.*)|*.*";
@@ -144,7 +144,7 @@ namespace WindowsFormsApp2
                             c = 0;
                         }
 
-                        for (int i = 0; i < lines.Length /2 + 1; i++)
+                        for (int i = 0; i < lines.Length /2; i++)
                         {
                             if (lines[i + i] == "")
                             {
@@ -154,46 +154,25 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
-                                if(c == 0) { 
-                                dataGridView1.Rows.Add();
-                                dataGridView1["Column4", i - c].Value = lines[i + i] + Environment.NewLine + lines[i + i + 1];
-                                dataGridView1["Column6", i - c].Value = "Verse" + (c + 1);
-                                dataGridView1["Column1", i - c].Value = i + 1 - c;
-                                dataGridView1.Rows[i - c].Cells[5] = new DataGridViewButtonCell();
-                                dataGridView1.Rows[i - c].Cells[5].Value = "Confirm";
-                            }
-                            else
-                            {
+                                //if(c == 0) { 
                                 dataGridView1.Rows.Add();
                                 dataGridView1["Column4", i - c].Value = lines[i + i - c] + Environment.NewLine + lines[i + i + 1 - c];
                                 dataGridView1["Column6", i - c].Value = "Verse" + (c + 1);
                                 dataGridView1["Column1", i - c].Value = i + 1 - c;
                                 dataGridView1.Rows[i - c].Cells[5] = new DataGridViewButtonCell();
                                 dataGridView1.Rows[i - c].Cells[5].Value = "Confirm";
-                            }
-                            //if (c == 0)
-                            //{
-                            //    dataGridView1.Rows.Add();
-                            //    dataGridView1.Rows.Add();
-                            //    dataGridView1["Column4", (2 * i) - c].Value = lines[i] + Environment.NewLine + lines[i + 1];
-                            //    dataGridView1["Column6", (2 * i) - c].Value = "Verse" + (c + 1);
-                            //    dataGridView1["Column1", (2 * i) - c].Value = i + 1 - c;
-                            //    dataGridView1.Rows[(2 * i) - c].Cells[5] = new DataGridViewButtonCell();
-                            //    dataGridView1.Rows[(2 * i) - c].Cells[5].Value = "Confirm";
                             //}
                             //else
                             //{
                             //    dataGridView1.Rows.Add();
-                            //    dataGridView1.Rows.Add();
-                            //    dataGridView1["Column4", (2 * i) - (c + 1)].Value = lines[i];
-                            //    dataGridView1["Column6", (2 * i) - (c + 1)].Value = "Verse" + (c + 1);
-                            //    dataGridView1["Column1", (2 * i) - (c + 1)].Value = i + 1 - c;
-                            //    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
-                            //    dataGridView1.Rows[(2 * i) - (c + 1)].Cells[5].Value = "Confirm";
+                            //    dataGridView1["Column4", i - c].Value = lines[i + i - c] + Environment.NewLine + lines[i + i + 1 - c];
+                            //    dataGridView1["Column6", i - c].Value = "Verse" + (c + 1);
+                            //    dataGridView1["Column1", i - c].Value = i + 1 - c;
+                            //    dataGridView1.Rows[i - c].Cells[5] = new DataGridViewButtonCell();
+                            //    dataGridView1.Rows[i - c].Cells[5].Value = "Confirm";
                             //}
                         }
                         }
-                        //c = 0;
                         
                     }
                 }
@@ -206,75 +185,75 @@ namespace WindowsFormsApp2
 
                 }
                 string payload = lyrics1.collection1.ToString();
-            //}
-            //catch { }
-           
+            }
+            catch { }
+
         }
 
-        // 영어 가사 파일 불러 오기
-        private void lyricsENFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Lyrics lyrics1 = new Lyrics();
+        //// 영어 가사 파일 불러 오기
+        //private void lyricsENFileToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Lyrics lyrics1 = new Lyrics();
 
-            //try
-            //{
-                using (OpenFileDialog open = new OpenFileDialog())
-                {
-                    open.Filter = "(*.txt) |*.txt|모든 파일(*.*)|*.*";
-                    if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        lyricsFileName = open.FileName;
-                        lines = File.ReadAllLines(lyricsFileName, Encoding.Default);
+        //    //try
+        //    //{
+        //        using (OpenFileDialog open = new OpenFileDialog())
+        //        {
+        //            open.Filter = "(*.txt) |*.txt|모든 파일(*.*)|*.*";
+        //            if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //            {
+        //                lyricsFileName = open.FileName;
+        //                lines = File.ReadAllLines(lyricsFileName, Encoding.Default);
 
-                        //if (dataGridView1.RowCount != 0)
-                        //{
-                        //    dataGridView1.Rows.Clear();
-                        //    c = 0;
-                        //}
+        //                //if (dataGridView1.RowCount != 0)
+        //                //{
+        //                //    dataGridView1.Rows.Clear();
+        //                //    c = 0;
+        //                //}
 
-                        for (int i = 0; i < lines.Length ; i++)
-                        {
-                            if (lines[i] == "")
-                            {
-                                verse = i;
-                                c++;
-                                Console.WriteLine("verse : " + verse);
-                            }
-                            else
-                            {
-                            if (c == 0)
-                            {
-                                    dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
-                                    dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
-                                    dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
-                                    dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
-                                    dataGridView1.Rows[(2 * i + 1) - c].Cells[5].Value = "Confirm";
-                            }
-                            else
-                            {
-                                    dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
-                                    dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
-                                    dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
-                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
-                                    dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
-                            }
-                        }
-                        }
+        //                for (int i = 0; i < lines.Length ; i++)
+        //                {
+        //                    if (lines[i] == "")
+        //                    {
+        //                        verse = i;
+        //                        c++;
+        //                        Console.WriteLine("verse : " + verse);
+        //                    }
+        //                    else
+        //                    {
+        //                    if (c == 0)
+        //                    {
+        //                            dataGridView1["Column4", (2 * i + 1) - c].Value = lines[i];
+        //                            dataGridView1["Column6", (2 * i + 1) - c].Value = "Verse" + (c + 1);
+        //                            dataGridView1["Column1", (2 * i + 1) - c].Value = i + 1 - c;
+        //                            dataGridView1.Rows[(2 * i + 1) - c].Cells[5] = new DataGridViewButtonCell();
+        //                            dataGridView1.Rows[(2 * i + 1) - c].Cells[5].Value = "Confirm";
+        //                    }
+        //                    else
+        //                    {
+        //                            dataGridView1["Column4", (2 * i + 1) - (c + 1)].Value = lines[i];
+        //                            dataGridView1["Column6", (2 * i + 1) - (c + 1)].Value = "Verse" + (c + 1);
+        //                            dataGridView1["Column1", (2 * i + 1) - (c + 1)].Value = i + 1 - c;
+        //                            dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5] = new DataGridViewButtonCell();
+        //                            dataGridView1.Rows[(2 * i + 1) - (c + 1)].Cells[5].Value = "Confirm";
+        //                    }
+        //                }
+        //                }
 
-                    }
-                }
-                string jsonFile = @"C:\VR_Karaoke\" +
-                    Path.GetFileNameWithoutExtension(Path.GetFileName(Form1.lyricsFileName)) +
-                    ".json";
-                if (!System.IO.File.Exists(jsonFile))
-                {
-                    lyrics1.lyrics1(lines.Length, lines, baseResult, result, verse);
+        //            }
+        //        }
+        //        string jsonFile = @"C:\VR_Karaoke\" +
+        //            Path.GetFileNameWithoutExtension(Path.GetFileName(Form1.lyricsFileName)) +
+        //            ".json";
+        //        if (!System.IO.File.Exists(jsonFile))
+        //        {
+        //            lyrics1.lyrics1(lines.Length, lines, baseResult, result, verse);
 
-                }
-                string payload = lyrics1.collection1.ToString();
-            //}
-            //catch { }
-        }
+        //        }
+        //        string payload = lyrics1.collection1.ToString();
+        //    //}
+        //    //catch { }
+        //}
 
 
         // Json 파일 로드 클릭

@@ -67,16 +67,17 @@ namespace WindowsFormsApp2
             for (int i = 0; i < idx; i++)
             {
                 dataGridView2.Rows.Add();
-                dataGridView2.Rows.Add();
                 TimeSpan t1 = TimeSpan.FromMilliseconds(double.Parse(result[line, i, 0]) * 1000);
-                //dataGridView2["Column2", i].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
-                dataGridView2["Column2", i + i].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
-                dataGridView2["Column2", i + i + 1].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                dataGridView2["Column2", i].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                //dataGridView2["Column2", i + i].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                //dataGridView2["Column2", i + i + 1].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                 //TimeSpan t2 = TimeSpan.FromMilliseconds(double.Parse(result[line, i, 1]) * 1000);
                 //dataGridView2["Column3", i].Value = String.Format("{0:00}:{1:00}:{2:000}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                 //dataGridView2["Column4", i].Value = result[line, i, 2];
-                dataGridView2["Column4", i + i].Value = data[line, i, 2];
-                dataGridView2["Column4", i + i + 1].Value = data[line, i, 1];
+                //dataGridView2["Column4", i + i].Value = data[line, i, 2];
+                //dataGridView2["Column4", i + i + 1].Value = data[line, i, 1];
+                dataGridView2["Column4", i].Value = data[line, i, 2];
+                dataGridView2["Column1", i].Value = data[line, i, 1];
             }
 
         }
@@ -92,17 +93,16 @@ namespace WindowsFormsApp2
                 Console.WriteLine("Json파일에서 불러오는 lineIndex : " + lineIndex);
                 for (int j = 0; j < Int32.Parse(data[line, 0, 3]) * 2; j++)
                 {
-                    dataGridView2.Rows.Add();
-                    dataGridView2.Rows.Add();
                     TimeSpan t1 = TimeSpan.FromMilliseconds(double.Parse(data[line, j, 0]) * 1000);
-                    dataGridView2["Column2", j + j].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
-                    dataGridView2["Column2", j + j + 1].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                    dataGridView2["Column2", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                    //dataGridView2["Column2", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                     //TimeSpan t2 = TimeSpan.FromMilliseconds(double.Parse(data[line, j, 1]) * 1000);
                     //dataGridView2["Column3", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t2.Minutes, t2.Seconds, t2.Milliseconds);
-                    dataGridView2["Column4", j + j].Value = data[line, j, 2];
-                    dataGridView2["Column4", j + j + 1].Value = data[line, j, 1];
+                    dataGridView2["Column4", j].Value = data[line, j, 2];
+                    dataGridView2["Column1", j].Value = data[line, j, 1];
+                    
                 }
-                for (int i = 0; i < lineIndex * 2; i++)
+                for (int i = 0; i < lineIndex; i++)
                 {
                     string[] array1 = dataGridView2.Rows[i].Cells[0].Value.ToString().Split(':');
                     double number1 = Int32.Parse(array1[0]) * 60 + Int32.Parse(array1[1]) + Int32.Parse(array1[2]) * 0.001;
@@ -110,8 +110,8 @@ namespace WindowsFormsApp2
                     //string[] array2 = dataGridView2.Rows[i].Cells[1].Value.ToString().Split(':');
                     //double number2 = Int32.Parse(array2[0]) * 60 + Int32.Parse(array2[1]) + Int32.Parse(array2[2]) * 0.001;
                     //data[line, i, 1] = number2.ToString();
-                    data[line, i, 2] = (string)dataGridView2.Rows[i * 2].Cells[1].Value;
-                    data[line, i, 1] = (string)dataGridView2.Rows[i * 2 + 1].Cells[1].Value;
+                    data[line, i, 2] = (string)dataGridView2.Rows[i].Cells[1].Value;
+                    data[line, i, 1] = (string)dataGridView2.Rows[i].Cells[2].Value;
 
 
                 }
@@ -140,7 +140,8 @@ namespace WindowsFormsApp2
                         //TimeSpan t2 = TimeSpan.FromMilliseconds(double.Parse(data[line, j, 1]) * 1000);
                         //dataGridView2["Column3", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                         dataGridView2["Column4", j].Value = data[line, j, 2];
-                    }
+                        dataGridView2["Column1", j].Value = data[line, j, 1];
+                        }
                     else
                     {
                         TimeSpan t1 = TimeSpan.FromMilliseconds((double.Parse(data[line, j, 0]) * 1000) - sum);
@@ -148,6 +149,7 @@ namespace WindowsFormsApp2
                         //TimeSpan t2 = TimeSpan.FromMilliseconds(double.Parse(data[line, j, 1]) * 1000);
                         //dataGridView2["Column3", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                         dataGridView2["Column4", j].Value = data[line, j, 2];
+                        dataGridView2["Column1", j].Value = data[line, j, 1];
                     }
                     
                 }
@@ -160,6 +162,7 @@ namespace WindowsFormsApp2
                     //double number2 = Int32.Parse(array2[0]) * 60 + Int32.Parse(array2[1]) + Int32.Parse(array2[2]) * 0.001;
                     //data[line, i, 1] = number2.ToString();
                     data[line, i, 2] = (string)dataGridView2.Rows[i].Cells[1].Value;
+                    data[line, i, 1] = (string)dataGridView2.Rows[i].Cells[2].Value;
 
 
                 }
@@ -182,7 +185,7 @@ namespace WindowsFormsApp2
                     //string[] array2 = dataGridView2.Rows[i].Cells[1].Value.ToString().Split(':');
                     //double number2 = Int32.Parse(array2[0]) * 60 + Int32.Parse(array2[1])  + Int32.Parse(array2[2]) * 0.001;
                     //data[this.idx, i, 1] = number2.ToString();
-                    data[this.idx, i, 2] = (string)dataGridView2.Rows[i].Cells[2].Value;
+                    data[this.idx, i, 2] = (string)dataGridView2.Rows[i].Cells[1].Value;
                     data[this.idx, i, 1] = (string)dataGridView2.Rows[i].Cells[2].Value;
                 }
                 WriteTextEvent(data, lineIndex, this.idx);
@@ -197,8 +200,8 @@ namespace WindowsFormsApp2
                     //string[] array2 = dataGridView2.Rows[i].Cells[1].Value.ToString().Split(':');
                     //double number2 = Int32.Parse(array2[0]) * 60 + Int32.Parse(array2[1]) + Int32.Parse(array2[2]) * 0.001;
                     //data[this.idx, i, 1] = number2.ToString();
-                    data[this.idx, i, 2] = (string)dataGridView2.Rows[2 * i].Cells[1].Value;
-                    data[this.idx, i, 1] = (string)dataGridView2.Rows[2 * i + 1].Cells[1].Value;
+                    data[this.idx, i, 2] = (string)dataGridView2.Rows[i].Cells[1].Value;
+                    data[this.idx, i, 1] = (string)dataGridView2.Rows[i].Cells[2].Value;
                 }
                 WriteTextEvent(data, index, this.idx);
             }
@@ -250,9 +253,9 @@ namespace WindowsFormsApp2
         private void button3_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Add();
-            dataGridView2.Rows.Add();
-            dataGridView2["Column2", index + index].Value = label7.Text;
-            dataGridView2["Column2", index + index + 1].Value = label7.Text;
+            dataGridView2["Column2", index].Value = label7.Text;
+            //dataGridView2["Column2", index + index].Value = label7.Text;
+            //dataGridView2["Column2", index + index + 1].Value = label7.Text;
             //dataGridView2["Column1", index + index].Value = index + 1;
             //dataGridView2["Column1", index + index + 1].Value = index + 1;
             index++;
@@ -275,15 +278,15 @@ namespace WindowsFormsApp2
             //{
                 if (index > 0)
                 {
-                    //dataGridView2["Column2", index - 1].Value = "";
-                    dataGridView2["Column2", index + index - 1].Value = "";
-                    dataGridView2["Column2", index + index - 2].Value = "";
-                    //dataGridView2["Column1", index + index - 1].Value = "";
-                    //dataGridView2["Column1", index + index - 2].Value = "";
-                    //dataGridView2.Rows.Remove(dataGridView2.Rows[index - 1]);
-                    dataGridView2.Rows.Remove(dataGridView2.Rows[index + index - 1]);
-                    dataGridView2.Rows.Remove(dataGridView2.Rows[index + index - 2]);
-                    data[this.idx, index - 1, 0] = "";
+                dataGridView2["Column2", index - 1].Value = "";
+                //dataGridView2["Column2", index + index - 1].Value = "";
+                //dataGridView2["Column2", index + index - 2].Value = "";
+                //dataGridView2["Column1", index + index - 1].Value = "";
+                //dataGridView2["Column1", index + index - 2].Value = "";
+                dataGridView2.Rows.Remove(dataGridView2.Rows[index - 1]);
+                //dataGridView2.Rows.Remove(dataGridView2.Rows[index + index - 1]);
+                //dataGridView2.Rows.Remove(dataGridView2.Rows[index + index - 2]);
+                data[this.idx, index - 1, 0] = "";
                     index--;
                     Console.WriteLine("index : " + index);
 

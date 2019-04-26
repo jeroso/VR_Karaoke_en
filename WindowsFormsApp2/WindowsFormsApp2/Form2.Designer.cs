@@ -58,6 +58,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetailTracBar)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,8 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
-            this.Column4});
+            this.Column4,
+            this.Column1});
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView2.Location = new System.Drawing.Point(409, 10);
@@ -333,10 +335,16 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Recorded";
+            this.Column4.HeaderText = "Recorded_Ko";
             this.Column4.Name = "Column4";
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column4.Width = 430;
+            this.Column4.Width = 245;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Recorded_En";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 245;
             // 
             // Form2
             // 
@@ -410,5 +418,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
