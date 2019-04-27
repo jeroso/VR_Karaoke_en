@@ -449,6 +449,7 @@ namespace WindowsFormsApp2
             }
         }
 
+        // dataGridView2 cell 클릭
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

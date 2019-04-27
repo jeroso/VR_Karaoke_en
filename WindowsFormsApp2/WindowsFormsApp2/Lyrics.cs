@@ -137,10 +137,11 @@ namespace WindowsFormsApp2
                 arr2 = new JsonArrayCollection("lines");
 
 
-                for (int i = 0; i < lines; i++)
+                for (int i = 0; i < lines / 2; i++)
                 {
                     collection3 = new JsonObjectCollection();
-                    collection3.Add(new JsonStringValue("lineText", lineText[i]));
+                    collection3.Add(new JsonStringValue("lineText", lineText[i + i]));
+                    collection3.Add(new JsonStringValue("lineTextEn", lineText[i + i + 1]));
                     collection3.Add(new JsonNumericValue("lineStart", baseResult[i, 0]));
                     collection3.Add(new JsonNumericValue("lineEnd", baseResult[i, 1]));
                     collection3.Add(new JsonStringValue("gender", ""));

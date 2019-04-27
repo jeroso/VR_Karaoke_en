@@ -144,7 +144,7 @@ namespace WindowsFormsApp2
                             c = 0;
                         }
 
-                        for (int i = 0; i < lines.Length /2; i++)
+                        for (int i = 0; i < lines.Length /2 + 1; i++)
                         {
                             if (lines[i + i] == "")
                             {

@@ -248,3 +248,20 @@ C:\Users\song\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsA
 C:\Users\song\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.application
 C:\Users\song\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.exe
 C:\Users\song\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.pdb
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Lyrics Authoring.exe.config
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.exe
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.pdb
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Lyrics Authoring.exe.manifest
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Lyrics Authoring.application
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Lyrics Authoring.exe
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Lyrics Authoring.pdb
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\VR_Karaoke.csprojResolveAssemblyReference.cache
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\LyricsAuthoring.Properties.Resources.resources
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\VR_Karaoke.csproj.GenerateResource.Cache
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.exe.manifest
+C:\Users\grace\Desktop\VR_Karaoke_en\VR_Karaoke_en\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Lyrics Authoring.application
