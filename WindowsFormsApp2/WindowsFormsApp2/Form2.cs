@@ -91,8 +91,9 @@ namespace WindowsFormsApp2
             {
                 lineIndex = Int32.Parse(data[line, 0, 3]);
                 Console.WriteLine("Json파일에서 불러오는 lineIndex : " + lineIndex);
-                for (int j = 0; j < Int32.Parse(data[line, 0, 3]) * 2; j++)
+                for (int j = 0; j < Int32.Parse(data[line, 0, 3]); j++)
                 {
+                    dataGridView2.Rows.Add();
                     TimeSpan t1 = TimeSpan.FromMilliseconds(double.Parse(data[line, j, 0]) * 1000);
                     dataGridView2["Column2", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                     //dataGridView2["Column2", j].Value = String.Format("{0:00}:{1:00}:{2:000}", t1.Minutes, t1.Seconds, t1.Milliseconds);

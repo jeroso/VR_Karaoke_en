@@ -259,11 +259,11 @@ namespace WindowsFormsApp2
         // Json 파일 로드 클릭
         private void JsonLoad_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 Form2 form2 = new Form2();
                 if(verse != 0) { 
-                for (int i = 0; i < lines.Length-1; i++)
+                for (int i = 0; i < lines.Length / 2 -1; i++)
                 {
                     dataGridView1["Column2", i].Value = "";
                     dataGridView1["Column3", i].Value = "";
@@ -271,13 +271,14 @@ namespace WindowsFormsApp2
             }
             else
             { 
-                for (int i = 0; i < lines.Length; i++)
+                for (int i = 0; i < lines.Length / 2; i++)
                 {
                     dataGridView1["Column2", i].Value = "";
                     dataGridView1["Column3", i].Value = "";
                 }
             }
-            index = 0;
+
+                index = 0;
                 JsonParser parser = new JsonParser();
                 using (OpenFileDialog open = new OpenFileDialog())
                 {
@@ -316,8 +317,8 @@ namespace WindowsFormsApp2
                     }
                     baseResultSave();
                 }
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
 

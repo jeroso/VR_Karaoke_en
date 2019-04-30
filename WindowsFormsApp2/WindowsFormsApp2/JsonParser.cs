@@ -16,12 +16,12 @@ namespace WindowsFormsApp2
         public JsonArrayCollection col2 = new JsonArrayCollection();
         public JsonObjectCollection item = new JsonObjectCollection();
         public JsonArrayCollection col3 = new JsonArrayCollection();
+
+
         public double[,] JsonTextParser(string strData, int verse)
         {
-
-
-            try
-            {
+            //try
+            //{
                 if (verse != 0)
                 {
                     JsonTextParser parser = new JsonTextParser();
@@ -139,8 +139,8 @@ namespace WindowsFormsApp2
                     }
 
                 }
-            }
-            catch { }
+            //}
+            //catch { }
             return time;
         }
 
