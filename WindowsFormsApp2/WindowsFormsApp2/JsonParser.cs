@@ -20,8 +20,8 @@ namespace WindowsFormsApp2
 
         public double[,] JsonTextParser(string strData, int verse)
         {
-            //try
-            //{
+            try
+            {
                 if (verse != 0)
                 {
                     JsonTextParser parser = new JsonTextParser();
@@ -42,10 +42,11 @@ namespace WindowsFormsApp2
                     col4 = (JsonArrayCollection)element2["lines"];
 
                     time = new double[col2.Count + col4.Count, 2];
-
+                    Console.WriteLine("col2.Count : " + col2.Count);
+                    Console.WriteLine("col4.Count : " + col4.Count);
                     // detailtime [ col2 : lines(가사 한줄) , col3 : Form2에 저장하는 한글자 라인 ,  0 : charStart  1: charEnd  2: text 3: col3.Count
                     detailtime = new string[col2.Count + col4.Count, 20, 4];
-                    for (i = 0; i < col2.Count; i++)
+                    for (i = 0; i < col2.Count ; i++)
                     {
                         JsonObjectCollection items = (JsonObjectCollection)col2[i];
 
@@ -117,12 +118,12 @@ namespace WindowsFormsApp2
                     {
                         JsonObjectCollection items = (JsonObjectCollection)col2[i];
 
-                        Console.WriteLine("col2.Count : " + col1.Count);
+                        Console.WriteLine("col2.Count : " + col2.Count);
                         time[i, 0] = double.Parse((string)items["lineStart"].GetValue().ToString()) * 1000;
                         time[i, 1] = double.Parse((string)items["lineEnd"].GetValue().ToString()) * 1000;
                         Console.WriteLine(time[i, 0] + " , " + time[i, 1]);
                         col3 = (JsonArrayCollection)items["charEvents"];
-                        Console.WriteLine(col3.Count);
+                        Console.WriteLine("col3.Count : " + col3.Count);
 
                         for (int j = 0; j < col3.Count; j++)
                         {
@@ -131,7 +132,9 @@ namespace WindowsFormsApp2
                             //detailtime[i, j, 1] = item["charEnd"].GetValue().ToString();
                             detailtime[i, j, 1] = ((JsonStringValue)item["textEn"]).Value;
                             detailtime[i, j, 2] = ((JsonStringValue)item["text"]).Value;
-                        }
+                            Console.WriteLine("detailtime[i, j, 1] : " + detailtime[i, j, 1]);
+                            Console.WriteLine("detailtime[i, j, 2] : " + detailtime[i, j, 2]);
+                    }
                         detailtime[i, 0, 3] = col3.Count.ToString();
 
 
@@ -139,8 +142,8 @@ namespace WindowsFormsApp2
                     }
 
                 }
-            //}
-            //catch { }
+            }
+            catch { }
             return time;
         }
 

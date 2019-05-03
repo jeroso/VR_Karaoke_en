@@ -47,7 +47,7 @@ namespace WindowsFormsApp2
 
                 arr2 = new JsonArrayCollection("lines");
 
-                for (int i = 0; i < verse / 2; i++)
+                for (int i = 0; i < verse ; i++)
                 {
                     collection3 = new JsonObjectCollection();
                     collection3.Add(new JsonStringValue("lineText", lineText[i + i]));
@@ -86,7 +86,7 @@ namespace WindowsFormsApp2
 
                 arr2 = new JsonArrayCollection("lines");
                 //for (int i = verse + 1; i < lines / 2; i++)
-                for (int i = verse + 1; i < lines / 2 + 1; i++)
+                for (int i = verse + 1; i < lines / 2 + 1 ; i++)
                 {
                     collection4 = new JsonObjectCollection();
                     collection4.Add(new JsonStringValue("lineText", lineText[i + i - 1]));

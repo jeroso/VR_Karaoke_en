@@ -39,6 +39,7 @@ namespace WindowsFormsApp2
         int rowIndex;
         int columnIndex;
         string combo;
+        bool isCell = false;
         Boolean pause = false;
         public Form2()
         {
@@ -76,8 +77,8 @@ namespace WindowsFormsApp2
                 //dataGridView2["Column4", i].Value = result[line, i, 2];
                 //dataGridView2["Column4", i + i].Value = data[line, i, 2];
                 //dataGridView2["Column4", i + i + 1].Value = data[line, i, 1];
-                dataGridView2["Column4", i].Value = data[line, i, 2];
-                dataGridView2["Column1", i].Value = data[line, i, 1];
+                dataGridView2["Column4", i].Value = result[line, i, 2];
+                dataGridView2["Column1", i].Value = result[line, i, 1];
             }
 
         }
@@ -91,6 +92,9 @@ namespace WindowsFormsApp2
             {
                 lineIndex = Int32.Parse(data[line, 0, 3]);
                 Console.WriteLine("Json파일에서 불러오는 lineIndex : " + lineIndex);
+                Console.WriteLine(" data[line, 0, 2]; : " + data[line, 0, 2]);
+                Console.WriteLine(" data[line, 1, 2]; : " + data[line, 1, 2]);
+
                 for (int j = 0; j < Int32.Parse(data[line, 0, 3]); j++)
                 {
                     dataGridView2.Rows.Add();
@@ -423,9 +427,11 @@ namespace WindowsFormsApp2
         {
             try
             {
+                if (isCell) { 
                 cell += Convert.ToInt32(this.combo);
                 TimeSpan t1 = TimeSpan.FromMilliseconds(cell);
                 dataGridView2.Rows[rowIndex].Cells[columnIndex].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                }
             }
             catch { }
         }
@@ -435,9 +441,17 @@ namespace WindowsFormsApp2
         {
             try
             {
+                if (isCell) { 
                 cell -= Convert.ToInt32(this.combo);
+                    if(cell < 0)
+                    {
+                        dataGridView2.Rows[rowIndex].Cells[columnIndex].Value = "00:00:000";
+                    }
+                    else { 
                 TimeSpan t1 = TimeSpan.FromMilliseconds(cell);
                 dataGridView2.Rows[rowIndex].Cells[columnIndex].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                    }
+                }
             }
             catch { }
         }
@@ -455,12 +469,20 @@ namespace WindowsFormsApp2
         {
             try
             {
-                string[] array = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Split(':');
-                cell = Int32.Parse(array[0]) * 60000 + Int32.Parse(array[1]) * 1000 + Int32.Parse(array[2]);
-                rowIndex = e.RowIndex;
-                columnIndex = e.ColumnIndex;
+                if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null && e.ColumnIndex < 3)
+                {
+                    isCell = true;
+                    string[] array = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Split(':');
+                    cell = Int32.Parse(array[0]) * 60000 + Int32.Parse(array[1]) * 1000 + Int32.Parse(array[2]);
+                    rowIndex = e.RowIndex;
+                    columnIndex = e.ColumnIndex;
 
-                cell = Int32.Parse(array[0]) * 60000 + Int32.Parse(array[1]) * 1000 + Int32.Parse(array[2]);
+                    cell = Int32.Parse(array[0]) * 60000 + Int32.Parse(array[1]) * 1000 + Int32.Parse(array[2]);
+                }
+                else
+                {
+                    isCell = false;
+                }
             }
             catch { }
         }

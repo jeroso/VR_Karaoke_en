@@ -288,7 +288,6 @@ namespace WindowsFormsApp2
                     {
                         jsonFileName = open.FileName;
 
-
                         jsonLines = System.IO.File.ReadAllText(jsonFileName);
                         time = parser.JsonTextParser(jsonLines, verse);
                         form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
@@ -307,10 +306,7 @@ namespace WindowsFormsApp2
                                 TimeSpan t2 = TimeSpan.FromMilliseconds(time[i, 1]);
                                 dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                                 //dataGridView1["Column3", i].Value = time[i, 1];
-                                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-                                sw.Start();
                                 form2.parserReceive(JsonParser.detailtime, i);
-                                sw.Stop();
                                 index++;
                             }
                         }
@@ -442,8 +438,8 @@ namespace WindowsFormsApp2
         // Form2로 부터 데이터 받아오는 메소드
         void frm2_WriteTextEvent(string[,,] data, int index, int line)
         {
-            try
-            {
+            //try
+            //{
                 Form2 form2 = new Form2();
                 Lyrics lyrics1 = new Lyrics();
                 for (int i = 0; i < index; i++)
@@ -457,16 +453,16 @@ namespace WindowsFormsApp2
                 //DataGridView2 의 행의 개수 0 : start , 1: End  2: text 3: 행수
                 result[line, 0, 3] = index.ToString();
                 lyrics1.lyrics1(lines.Length, lines, baseResult, result, verse);
-            }
-            catch { }
+            //}
+            //catch { }
         }
 
 
         // confirm 버튼 클릭시 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 Form2 form2 = new Form2();
                 lineIndex = dataGridView1.SelectedCells[0].RowIndex;
                 form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
@@ -494,8 +490,8 @@ namespace WindowsFormsApp2
 
                     form2.Show();
                 }
-            }
-            catch { MessageBox.Show("Please open the music file & Time Check!"); }
+            //}
+            //catch { MessageBox.Show("Please open the music file & Time Check!"); }
         }
 
 
@@ -727,15 +723,15 @@ namespace WindowsFormsApp2
         //plus
         private void button9_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (isCell) { 
                 cell += Convert.ToInt32(this.combo1);
                 TimeSpan t1 = TimeSpan.FromMilliseconds(cell);
                 dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                 }
-            //}
-            //catch { }
+            }
+            catch { }
         }
 
         //minus
@@ -743,10 +739,16 @@ namespace WindowsFormsApp2
         {
             try
             {
-                if (isCell) { 
+                if (isCell) {
                 cell -= Convert.ToInt32(this.combo1);
+                    if(cell < 0)
+                    {
+                        dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = "00:00:000";
+                    }
+                    else { 
                 TimeSpan t1 = TimeSpan.FromMilliseconds(cell);
                 dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                    }
                 }
             }
             catch { }

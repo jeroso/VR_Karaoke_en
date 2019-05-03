@@ -344,6 +344,7 @@
             // 
             this.Column1.HeaderText = "Recorded_En";
             this.Column1.Name = "Column1";
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column1.Width = 245;
             // 
             // Form2
