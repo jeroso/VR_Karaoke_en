@@ -343,26 +343,32 @@ namespace WindowsFormsApp2
                 {
                     if (sign)
                     {
-                        jsonLines = System.IO.File.ReadAllText(jsonFileName);
-                        time = parser.JsonTextParser(jsonLines, verse);
-                        form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
-                        TimeSpan t1 = TimeSpan.FromMilliseconds(time[i, 0] + sum);
-                        TimeSpan t2 = TimeSpan.FromMilliseconds(time[i, 1] + sum);
-                        dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
-                        dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
-                        form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
-                }
+                        if (dataGridView1["Column2", i].Value.ToString() != "" && dataGridView1["Column3", i].Value.ToString() != "")
+                        {
+                            jsonLines = System.IO.File.ReadAllText(jsonFileName);
+                            time = parser.JsonTextParser(jsonLines, verse);
+                            form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
+                            TimeSpan t1 = TimeSpan.FromMilliseconds(time[i, 0] + sum);
+                            TimeSpan t2 = TimeSpan.FromMilliseconds(time[i, 1] + sum);
+                            dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                            dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
+                            form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
+                        }
+                    }
                     else
                     {
-                        jsonLines = System.IO.File.ReadAllText(jsonFileName);
-                        time = parser.JsonTextParser(jsonLines, verse);
-                        form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
-                        TimeSpan t1 = TimeSpan.FromMilliseconds(time[i, 0] - sum);
-                        TimeSpan t2 = TimeSpan.FromMilliseconds(time[i, 1] - sum);
-                        dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
-                        dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
-                        form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
-                }
+                        if (dataGridView1["Column2", i].Value.ToString() != "" && dataGridView1["Column3", i].Value.ToString() != "")
+                        {
+                            jsonLines = System.IO.File.ReadAllText(jsonFileName);
+                            time = parser.JsonTextParser(jsonLines, verse);
+                            form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
+                            TimeSpan t1 = TimeSpan.FromMilliseconds(time[i, 0] - sum);
+                            TimeSpan t2 = TimeSpan.FromMilliseconds(time[i, 1] - sum);
+                            dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
+                            dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
+                            form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
+                        }
+                    }
 
                 }
            
