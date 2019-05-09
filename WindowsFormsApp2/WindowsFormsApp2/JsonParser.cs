@@ -63,7 +63,8 @@ namespace WindowsFormsApp2
                             //detailtime[i, j, 1] = item["charEnd"].GetValue().ToString();
                             detailtime[i, j, 1] = ((JsonStringValue)item["textEn"]).Value;
                             detailtime[i, j, 2] = ((JsonStringValue)item["text"]).Value;
-
+                            Console.WriteLine("detailtime[i, j, 1] : " + detailtime[i, j, 1]);
+                            Console.WriteLine("detailtime[i, j, 2] : " + detailtime[i, j, 2]);
                         }
                         detailtime[i, 0, 3] = col3.Count.ToString();
 
@@ -143,7 +144,7 @@ namespace WindowsFormsApp2
 
                 }
             }
-            catch { }
+            catch { Console.WriteLine("JsonPaser Exception!!!!!!!!!!!!!!!"); }
             return time;
         }
 

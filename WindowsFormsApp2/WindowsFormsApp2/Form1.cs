@@ -117,7 +117,7 @@ namespace WindowsFormsApp2
                     // 전체 재생시간
                     label1.Text = String.Format("{0:00}:{1:00}:{2:000}", min, sec, milliSec);
                     totalTime = leng.ToString();
-                    Console.Write("mp3Player Length() : " + MP3TrackBar.Maximum);
+                    Console.WriteLine("mp3Player Length() : " + MP3TrackBar.Maximum);
                     Console.WriteLine("trackBarLength : " + trackBarLength);
                 }
             }
@@ -314,10 +314,9 @@ namespace WindowsFormsApp2
                     baseResultSave();
                 }
             //}
-            //catch { }
+            //catch { Console.WriteLine("Json파일 로드 Exception!!!!!!!!!!!!!!!"); }
         }
-
-
+        
         //Convert 버튼
         private void button11_Click(object sender, EventArgs e)
         {
@@ -353,6 +352,7 @@ namespace WindowsFormsApp2
                             dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                             dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                             form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
+                            index++;
                         }
                     }
                     else
@@ -367,6 +367,7 @@ namespace WindowsFormsApp2
                             dataGridView1["Column2", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t1.Minutes, t1.Seconds, t1.Milliseconds);
                             dataGridView1["Column3", i].Value = string.Format("{0:D2}:{1:D2}:{2:D3}", t2.Minutes, t2.Seconds, t2.Milliseconds);
                             form2.parserReceive2(JsonParser.detailtime, i, sum, sign);
+                            index++;
                         }
                     }
 
@@ -387,7 +388,7 @@ namespace WindowsFormsApp2
             {
                 if (verse != 0)
                 {
-                    for (int i = 0; i < lines.Length - 1; i++)
+                    for (int i = 0; i < lines.Length / 2 - 1; i++)
                     {
                         if (dataGridView1["Column2", i].Value == null)
                         {
@@ -419,7 +420,7 @@ namespace WindowsFormsApp2
                 }
 
             }
-            catch { }
+            catch { Console.WriteLine("baseSaveResult ()  Exception!!!!!!!!!!!!!!!"); }
         }
         //DataGridView2 의 데이터를 result 배열에 저장
         public void DetailResultSave()
@@ -467,8 +468,8 @@ namespace WindowsFormsApp2
         // confirm 버튼 클릭시 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 Form2 form2 = new Form2();
                 lineIndex = dataGridView1.SelectedCells[0].RowIndex;
                 form2.WriteTextEvent += new Form2.TextEventHandler(frm2_WriteTextEvent);
@@ -496,8 +497,8 @@ namespace WindowsFormsApp2
 
                     form2.Show();
                 }
-            //}
-            //catch { MessageBox.Show("Please open the music file & Time Check!"); }
+            }
+            catch { MessageBox.Show("Please open the music file & Time Check!"); }
         }
 
 

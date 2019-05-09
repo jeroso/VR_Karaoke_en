@@ -86,9 +86,9 @@ namespace WindowsFormsApp2
         // Json 파일에서 값을 가져오는 메소드
         public void parserReceive(string[,,] data, int line)
         {
-            //try
-            //{
-            if (data != null)
+            try
+            {
+                if (data != null)
             {
                 lineIndex = Int32.Parse(data[line, 0, 3]);
                 Console.WriteLine("Json파일에서 불러오는 lineIndex : " + lineIndex);
@@ -123,8 +123,8 @@ namespace WindowsFormsApp2
 
                 WriteTextEvent(data, lineIndex, line);
             }
-            //}
-            //    catch { }
+            }
+            catch { Console.WriteLine("parserReceive()  Exception!!!!!!!!!!!!!!!"); }
         }
 
         // Covert 버튼 클릭시 받아오는 값
